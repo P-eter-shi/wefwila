@@ -23,3 +23,17 @@ print(test)
 
 x=random.choice([3,0,9,5,4],p=[0.3,0.1,0.0,0.2,0.4],size=(2,5))
 print(x)
+print("")
+
+import math
+x=pow(2,5)%14
+print(x)
+print("")
+
+y=pow(4,11)%14
+print(y)
+print("")
+
+
+
+
