@@ -64,6 +64,7 @@ class AIAssistant:
         """
         Prepare training data from intents
         """
+        #create an empty set
         patterns = []
         labels = []
         
