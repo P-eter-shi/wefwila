@@ -14,4 +14,4 @@ elif operand=="*":
 elif operand=="/":
     print(f"quotient: {num1}/{num2}={num1/num2}")
 else:
-    print("invalid operand") #invalid operand if user inputs non-operand
+    print("invalid operand") #invalid operand if user inputs non-operand.
