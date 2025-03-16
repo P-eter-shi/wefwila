@@ -36,13 +36,13 @@ class campus:
         self.filename=filename
         self.course=course
         self.amount=amount
-        self.course=input(f"Enter your course program:")
-        self.amount=int(input(f"Enter your payments"))
+        self.course=input(f"Enter your course program: ")
+        self.amount=int(input(f"Enter your payments "))
         if self.amount>=self.__fees:
             print(f"You are elligible to seat for exam in {self.course}")
         else:
             self.__balance=self.__fees-self.amount
-            filename=input("Enter your name:")
+            filename=input("Enter your name: ")
             with open("feestatement.txt","w") as file:
                 file.write(f"Dear {filename} ,you have a balance of {self.__balance} to clear")
                 print("Your fee statement is ready")
@@ -52,7 +52,7 @@ class campus:
         self.spebooks=["novels","medical","engineering"]
         try:
             print(f"Books available are {self.booksavail}")
-            want=input("Enter the book you want to borrow:")
+            want=input("Enter the book you want to borrow: ")
             if want in self.spebooks:
                 print(f"This require special permission")
             else:
@@ -64,7 +64,7 @@ class campus:
         self.hotels=["A","B","C","D","E"]
         print(f"Hostels available are {self.hotels}")
         try:
-            stay=input("Enter the hostel you want to stay:")
+            stay=input("Enter the hostel you want to stay: ")
             if stay in self.hotels:
                 print(f"Enjoy Stay in hostel{stay}")
             else:
