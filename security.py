@@ -1,6 +1,6 @@
 import random
 
-# Utility function to check for primality (simple and not efficient for large numbers)
+
 def is_prime(n):
     if n <= 1:
         return False
@@ -15,38 +15,38 @@ def is_prime(n):
         i += 2
     return True
 
-# Generate a prime number in a given range (for demonstration, use small primes)
+
 def generate_prime_candidate(start=100, end=300):
     while True:
         p = random.randint(start, end)
         if is_prime(p):
             return p
 
-# Generate RSA public and private keys
+#  RSA public and private keys
 def generate_keys():
-    # Step 1: Generate two distinct prime numbers
+    #  Generate two distinct prime numbers
     p = generate_prime_candidate()
     q = generate_prime_candidate()
     while q == p:
         q = generate_prime_candidate()
     
-    # Step 2: Compute n and φ(n)
+    # Compute n and φ(n)
     n = p * q
     phi = (p - 1) * (q - 1)
     
-    # Step 3: Choose public exponent e (commonly 65537)
+    # public exponent e (commonly 65537)
     e = 65537
     def gcd(a, b):
         while b:
             a, b = b, a % b
         return a
-    # Ensure e and φ(n) are co-prime; if not, choose a different e
+   
     if gcd(e, phi) != 1:
         e = 3
         while gcd(e, phi) != 1:
             e += 2
     
-    # Step 4: Compute d, the modular inverse of e modulo φ(n)
+    #  Compute d, the modular inverse of e modulo φ(n)
     def modinv(a, m):
         def egcd(a, b):
             if a == 0:
@@ -80,7 +80,7 @@ def decrypt(private_key, ciphertext):
     plaintext = m.to_bytes(length, 'big').decode('utf-8', errors='ignore')
     return plaintext
 
-# Example usage
+
 public_key, private_key = generate_keys()
 print("Public Key:", public_key)
 print("Private Key:", private_key)
